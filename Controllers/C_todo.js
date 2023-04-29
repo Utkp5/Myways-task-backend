@@ -53,6 +53,20 @@ const displayTodo = async(req,res) => {
 
 const displaySingleTodo = async(req,res) => {
     try {
+
+        const _id = req.params.id;
+        console.log(_id);
+        const single = await MywayModel.findById(_id);
+
+        if (!single) {
+            return res.status(400).send({message : `No message found`});
+        }
+
+        const final = await MywayModel.find({});
+
+        return res.status(200).send(final);
+
+
         
     } catch (error) {
         console.log(error);
@@ -110,4 +124,4 @@ const deleteTodo = async(req,res) => {
 } 
 
 
-module.exports = {createTodo, displayTodo, updateTodo, deleteTodo}
+module.exports = {createTodo, displayTodo, displaySingleTodo,updateTodo, deleteTodo}
