@@ -30,6 +30,8 @@ const createTodo = async(req,res) => {
     }
 } 
 
+
+
 const displayTodo = async(req,res) => {
     try {
         
@@ -47,6 +49,15 @@ const displayTodo = async(req,res) => {
         
     }
 } 
+
+
+const displaySingleTodo = async(req,res) => {
+    try {
+        
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 const updateTodo = async(req,res) => {
 
@@ -74,6 +85,8 @@ const updateTodo = async(req,res) => {
         
     }
 } 
+
+
 const deleteTodo = async(req,res) => {
 
     try {
