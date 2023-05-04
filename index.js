@@ -19,7 +19,9 @@ app.use(express.urlencoded({ limit: "100mb", extended: false }));
 const dbconnect = require('./Service/dbConfig');
 dbconnect();
 
-
+//dotenv
+const dotenv = require('dotenv');
+dotenv.config();
 
 //router
 const todoRouter = require('./Router/todo');
